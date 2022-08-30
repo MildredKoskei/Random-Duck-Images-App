@@ -1,1 +1,1 @@
-# Random-Fox-Images-App
+# Random-Duck-Images-App
