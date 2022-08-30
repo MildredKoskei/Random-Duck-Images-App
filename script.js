@@ -2,12 +2,16 @@ const FoxAPI = "https://randomfox.ca/floof"
 const h6 = document.createElement("h6");
 h6.textContent = "copyrightsreserved@mildred.koskei";
 document.querySelector("body").appendChild(h6);
+let likes;git 
 
 fetch(FoxAPI)
 .then(resp => resp.json())
 .then(data=> console.log(data))
 
-const addLikes = document.querySelector('#like-button')
+const likesbutton = document.querySelector('#like-button').addEventListener('click', ()=>{
+    likes += 1;
+    displayLikes();
+});
 
 
 const form = document.querySelector('#comment-form').addEventListener('submit', (e)=>{
@@ -28,7 +32,7 @@ function showComment(comment) {
   function deleteHandle(e){
       e.target.parentNode.remove()
   }
-  //function displayLikes() {
-    //likeCount.textContent = `${likes} likes`;
-  //}
+  function displayLikes() {
+    likeCount.textContent = `${likes} likes`;
+  }
 
